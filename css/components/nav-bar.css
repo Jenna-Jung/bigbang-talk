@@ -6,6 +6,7 @@
     padding:20px 50px;
     box-sizing:border-box;
     border-top:1px solid rgba(121, 121, 121, 0.3);
+    
 
 }
 .nav__list{
@@ -16,11 +17,23 @@
 .nav__link{
     position: relative;
     color:#2e363e;
+   
 }
 a{
     color:inherit;
 }
 
+@keyframes notificationAnimation {
+    0%{
+        transform: none;
+    }
+    50%{
+        transform: translateY(-5px) rotateY(45deg);
+    }
+    100%{
+        transform:none;
+    }
+}
 .nav__notification{
     background-color:tomato;
     color:white;
@@ -36,6 +49,7 @@ a{
     left:14px;
     bottom:8px;
     font-size:14px;
+    animation:notificationAnimation 2s ease-in-out infinite;
 }
 
 .fa-circle{
@@ -45,4 +59,17 @@ a{
     position: absolute;
     left:19px;
     bottom:14px;
+}
+@keyframes appearBtnAnimation{
+    from{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to{
+        opacity:none;
+        transform: none;
+    }
+}
+.nav__btn {
+    animation: appearBtnAnimation 1s ease-in-out;
 }

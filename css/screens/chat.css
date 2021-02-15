@@ -10,11 +10,22 @@
     top:10px;
     z-index:2;
 }
+@keyframes fadeIn {
+from{
+transfrom: translateY(100px);
+opacity: 0;
+}
+to{
+transform: none;
+opacity:1;
+}
+}
+
 .main-chat{
-    margin-top: 135px;
+    margin-top: 130px;
     display: flex;
     flex-direction: column;
-    
+    animation: fadeIn 1s linear;
 }
 .chat-screen .status-bar{
     z-index:1;
@@ -61,15 +72,90 @@
     height: 50px;
     border-radius: 30%;
     margin-right: 15px;
+    margin-bottom:25px;
 }
 .message_author{
     opacity:0.8;
     font-size: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     display:block;
 }
 .message_bubble {
     background-color: white;
-    padding:8px 13px;
-    border-radius: 10px;
+    padding:13px;
+    border-radius: 15px;
+    border-top-left-radius:0px;
+    margin-right: 5px;
+}
+.message_time{
+    opacity:0.8;
+    font-size: 15px;
+}
+.message_info{
+    display:flex;
+    align-items: flex-end;
+}
+.messageown{
+   position:relative;
+   left:325px;
+}
+.messageown .message_bubble{
+    background-color: var(--yellow);
+    border-top-right-radius:0px;
+    border-top-left-radius:15px;
+}
+.time-own{
+   position:relative;
+   right:7px;
+   opacity:0.9 ;
+   font-size:15px;
+}
+.reply{
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+    padding:5px 25px;
+    box-sizing: border-box;
+    align-items: center;
+}
+.reply .reply__column:first-child{
+    width:10%;
+}
+
+.reply .reply__column:last-child{
+    width:90%;
+    position: relative;
+}
+
+
+.reply input {
+   padding-left:10px;
+    height: 30px;
+    width: 100%;
+    border:var(--main-border);
+    border-radius:20px;
+}
+.reply__column:last-child>i, .reply button {
+    position:absolute;
+    right:-10px;
+    top:2px;
+
+}
+.reply__column:last-child>i{
+    right:45px;
+    top:9px;
+}
+.reply button{
+    background-color: var(--yellow);
+    border:none;
+    width:30px;
+    height: 30px;
+    border-radius:50%;
+}
+.reply button:focus, 
+.reply button:active {
+    outline:none;
 }
